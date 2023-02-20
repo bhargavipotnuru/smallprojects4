@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        <h1>Prime Number Checker</h1>
+
+    </title>
+    <style>
+          h1 {
+        font-size: 36px;
+        color: blue;
+        text-align: center;
+      }
+        body{
+            background-color:aquamarine; 
+            font-size: medium;
+        }
+        
+    </style>
+
+    <br><br>
+    <script>
+      function isPrime(n) {
+        if (n < 2) {
+          return false;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+          if (n % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function checkPrime() {
+        const number = document.getElementById("number").value;
+        const result = document.getElementById("result");
+        if (isPrime(number)) {
+          result.innerHTML = `${number} is a prime number.`;
+        } else {
+          result.innerHTML = `${number} is not a prime number.`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+    <h1>Prime Number Checker</h1>
+ <h3>
+      <form><br><br>
+      <label for="number">Enter a number:</label><br><br>
+      <input type="number" id="number" name="number" required>
+      <br><br>
+      <button type="button" onclick="checkPrime()">Check</button><br><br>
+    </form>
+
+    <p id="result"></p>
+ </h3>
+    </center>
+  </body>
+</html>
