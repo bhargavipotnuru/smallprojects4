@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <center>
+
+
+	<title>Palindrome Checker</title>
+    <style>
+        h1 {
+           font-size: 36px;
+           color: blue;
+           text-align: center;
+         }
+           body{
+               background-color:aquamarine; 
+               font-size: medium;
+           }
+           h2{font-size: medium;}
+     </style>
+
+	<script>
+    
+		function checkPalindrome() {
+			let num = document.getElementById("input-number").value;
+			
+			// Convert the number to a string
+			num = num.toString();
+			
+			// Reverse the string and compare with the original
+			if (num === num.split('').reverse().join('')) {
+				document.getElementById("result").innerHTML = "Yes, it's a palindrome!";
+			} else {
+				document.getElementById("result").innerHTML = "No, it's not a palindrome.";
+			}
+		}
+	</script>
+    </center>
+</head>
+<body> 
+    <center>
+	<h1>Palindrome Checker</h1>
+	<h2>
+	<form>
+		<label for="input-number">Enter a number:</label><br><br><br>
+		<input type="number" id="input-number"><br><br><br>
+		<input type="button" value="Check" onclick="checkPalindrome()"><br><br><br>
+	</form>
+	
+	<p id="result"></p>
+    </h2>
+    </center>
+</body>
+</html>

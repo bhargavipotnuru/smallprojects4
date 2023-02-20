@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci Series</title>
+  <style>
+    h1 {
+       font-size: 36px;
+       color: blue;
+       text-align: center;
+     }
+       body{
+           background-color:aquamarine; 
+           font-size: medium;
+       }
+       h2{font-size: medium;}
+ </style>
+</head>
+<body>
+<center>
+  <h1>Fibonacci Series</h1>
+<h2>
+  <form>
+    <label for="terms">Enter the number of terms:</label><br><br><br>
+    <input type="number" id="terms" name="terms" min="1" max="50" required><br><br><br>
+    <button type="submit">Generate Fibonacci Series</button><br><br><br>
+  </form>
+</h2>
+  <div id="output"></div>
+
+  <script>
+    function generateFibonacci() {
+      // Get the input value
+      const terms = document.getElementById("terms").value;
+
+      // Generate the Fibonacci series
+      let fibonacci = [0, 1];
+      for (let i = 2; i < terms; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+      }
+
+      // Display the Fibonacci series
+      const output = document.getElementById("output");
+      output.innerHTML = `Fibonacci series (${terms} terms): ${fibonacci.join(", ")}`;
+    }
+
+    // Add event listener to the form
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      generateFibonacci();
+    });
+    
+  </script>
+</center>
+</body>
+</html>
